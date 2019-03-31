@@ -2,9 +2,9 @@ import os
 import core
 
 
-def assign_key_to_apk(key_path, assigned_path, rebuild_path, apk_file_list_path):
+def assign_key_to_apk(key_path, assigned_path, rebuild_path):
 
-    rebuild_apk_list_path = core.apks_list_gen.folder_name_gen(rebuild_path)
+    rebuild_apk_list_path = core.apks_list_gen.apk_name_gen(rebuild_path)
     rebuild_apk_name_list = []
 
     for line in open(rebuild_apk_list_path).readlines():
@@ -22,7 +22,8 @@ def assign_key_to_apk(key_path, assigned_path, rebuild_path, apk_file_list_path)
         if apk_name in files:
             print("%s exists!!!!" % apk_name)
         else:
-            cmd = "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -storepass 123456 -keystore %s -signedjar %s %s abc.keystore" % (
+            cmd = "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
+             -storepass 123456 -keystore %s -signedjar %s %s abc.keystore" % (
                 key_file, apk_assigned_file, apk_rebuild_file)
             print(cmd)
             os.system(cmd)

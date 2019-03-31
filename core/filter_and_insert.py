@@ -98,7 +98,7 @@ def _insert_at_beginning(insertion_file_path, decode_file_path, pattern):
     f_decode_read.close()
 
 
-def _is_method_start(line):
+def _is_method_start(line: str) -> bool:
     return line.startswith(".method")
 
 
