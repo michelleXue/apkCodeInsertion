@@ -4,7 +4,7 @@ import core
 
 def assign_key_to_apk(key_path, assigned_path, rebuild_path):
 
-    rebuild_apk_list_path = core.apks_list_gen.apk_name_gen(rebuild_path)
+    rebuild_apk_list_path = core.apk_list.apk_gen(rebuild_path)
     rebuild_apk_name_list = []
 
     for line in open(rebuild_apk_list_path).readlines():

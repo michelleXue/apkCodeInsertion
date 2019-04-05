@@ -4,7 +4,7 @@ import core
 
 def decode_apk(root_path, decode_path):
     # get apk list file
-    apk_list_file = core.apks_list_gen(root_path)
+    apk_list_file = core.apk_list.get_file(root_path)
 
     # decode each apk file to decode path according to the apk list
     with open(apk_list_file) as f:
@@ -18,3 +18,4 @@ def decode_apk(root_path, decode_path):
                 cmd = "apktool d %s.apk -o %s" % (apk_origin_path, apk_decode_path)
                 print(cmd)
                 os.system(cmd)
+

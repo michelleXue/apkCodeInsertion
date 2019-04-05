@@ -4,7 +4,7 @@ import core
 
 def key_gen(key_path, rebuild_path):
 
-    apk_list_path = core.apks_list_gen.apk_name_gen(rebuild_path)
+    apk_list_path = core.apk_list.apk_gen(rebuild_path)
     apk_name_list = []
 
     for line in open(

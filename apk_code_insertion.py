@@ -10,11 +10,11 @@ REBUILD_PATH = "/Users/xue/Documents/Research/InputGeneration/apkAnalysis/rebuil
 ASSIGNED_PATH = "/Users/xue/Documents/Research/InputGeneration/apkAnalysis/signed/"
 
 
-apk_list_path_origin = core.apks_list_gen.apk_name_gen(ORIGIN_PATH)
-# decode the apk files
-core.decode.decode_apk(ORIGIN_PATH, DECODE_PATH)
-# filter and insert
-core.filter_and_insert.filter_and_insert_apk(DECODE_PATH, INSERT_PATH, apk_list_path_origin, PATTERN)
+apk_list_path_origin = core.apk_list.apk_gen(ORIGIN_PATH)
+# # decode the apk files
+# core.decode.decode_apk(ORIGIN_PATH, DECODE_PATH)
+# # filter and insert
+# core.filter_and_insert.filter_and_insert_apk(DECODE_PATH, INSERT_PATH, apk_list_path_origin, PATTERN)
 # rebuild apks
 core.rebuild.rebuild_apk(REBUILD_PATH, INSERT_PATH)
 # key generation
